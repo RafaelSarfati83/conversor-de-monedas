@@ -1,0 +1,43 @@
+@use "../abstracts/variables";
+
+.about {
+  
+  padding: 0.5rem 1rem;
+  max-width: variables.$max-width;
+  margin: auto;
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
+  @media (min-width: 1440px) {
+    padding: variables.$max-padding;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    @media (min-width) {
+    line-height: 38px;
+    font-size: 32px;
+    }
+    &-container {
+      padding: 0.5rem 0;
+    }
+  
+  }
+  &__paragraph {
+    font-size: 14px;
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
+    &-container {
+      padding: 0.5rem 0;
+    }
+  }
+  &__signature {
+    height: 52px;
+    object-fit: contain;
+    &-container {
+      padding: 0.5rem 0;
+    }
+  }
+}

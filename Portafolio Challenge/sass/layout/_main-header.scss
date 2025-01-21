@@ -1,0 +1,127 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+@use "../abstracts/mixins";
+@use "../abstracts/functions";
+
+.main-header {
+  background-color: functions.css-variable(thi-bgcolor);
+  transition: background 0.5s;
+  width: 100vw;
+  z-index: 20;
+  // height: initial;
+  // position: fixed;
+  position: sticky;
+  top: 0;
+  &__wrapper {
+    @include mixins.display-flex(row, space-between, stretch);
+    // background-color: #e5e5e5;
+    padding: 0.5rem;
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+    // overflow-x: hidden;
+    @media (min-width: 768px) {
+      padding: 1rem;
+    }
+    @media (min-width: 1440px) {
+      padding: 1.5rem;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    // height: 100%;
+    pointer-events: none;
+    // @include mixins.display-flex(row, stretch, center);
+    &-link {
+      text-decoration: none;
+      padding: 0.5rem;
+      @include mixins.display-flex;
+      gap: 0.5rem;
+      // background-color: red;
+      @media (min-width: 992px) {
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+    }
+    &-icon {
+      pointer-events: none;
+    }
+  }
+  &__nav-container {
+    padding: 2em;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+    height: 100vh;
+    background-color: functions.css-variable(thi-bgcolor);
+    width: 100%;
+    max-width: 425px;
+    transform: translate(-150%);
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    gap: 2rem;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out, background 0.5s, color 0.5s;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    @media (min-width: 992px) {
+      margin: 0;
+      padding: 0;
+      flex-direction: row-reverse;
+      position: static;
+      height: initial;
+      width: initial;
+      transform: none;
+      max-width: none;
+      background-color: transparent;
+      box-shadow: none;
+      flex: 1;
+    }
+  }
+  &__contact {
+    @include mixins.display-flex(row, flex-end, stretch);
+    // width: 25%;
+    height: 100%;
+    padding: 0 0.5rem;
+    &-container {
+      display: block;
+      flex: 1;
+      @media (min-width: 992px) {
+        flex: 0;
+      }
+      // @include mixins.display-flex(row, stretch, stretch);
+    }
+    &-link {
+      padding: 0.5rem;
+      @include mixins.display-flex();
+      font-weight: 400;
+      font-size: 14px;
+      // height: 100%;
+      text-decoration: none;
+      transition: all 0.2s;
+      &:hover {
+        // color: black;
+      }
+      @media (min-width: 992px) {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+  &__hamburger-button-container {
+    padding: 0.5rem;
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+  &__dark-mode-container {
+    height: 48px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}

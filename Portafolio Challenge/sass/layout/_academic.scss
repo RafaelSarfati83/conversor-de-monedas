@@ -1,0 +1,65 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+
+.academic {
+  padding: 1rem 2rem;
+  max-width: variables.$max-width;
+  margin: auto;
+  @media (min-width: 1440px) {
+    padding: variables.$max-padding;
+  }
+  &__header {
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    @media (min-width: 1440px) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+  &__courses {
+    padding: 1rem 0;
+    @include mixins.display-flex(column, stretch, stretch);
+    gap: 1rem;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+    &-content {
+      @media (min-width: 768px) {
+        flex: 1;
+      }
+    }
+  }
+  &__list {
+    @include mixins.display-flex(column, stretch, stretch);
+    gap: 0.5rem;
+  }
+  &__item {
+    &--img {
+      height: 120px;
+      object-fit: contain;
+      padding: 2rem;
+      background-color: functions.css-variable(sec-color);
+      @include mixins.display-flex;
+    }
+    &--title {
+      line-height: 19px;
+      font-weight: 700;
+    }
+    &--subtitle {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+  &__img {
+    height: 100%;
+    object-fit: contain;
+  }
+  &__career {
+  }
+  &__time {
+  }
+}

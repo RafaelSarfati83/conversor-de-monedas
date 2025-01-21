@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+@use '../abstracts/functions';
+
+.btn {
+  border: 1px solid functions.css-variable(border-btn);
+  padding: 0.75rem 1rem;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  // border-radius: 0.25rem;
+  text-decoration: none;
+  transition: 0.1s all;
+  &--light {
+    color: functions.css-variable(uti2-color);
+    background: functions.css-variable(uti2-bgcolor);
+    &:hover {
+      background: functions.css-variable(uti1-bgcolor);
+      color: functions.css-variable(uti1-color);
+    }
+  }
+  &--dark {
+    background: functions.css-variable(uti1-bgcolor);
+    color: functions.css-variable(uti1-color);
+    &:hover {
+      color: functions.css-variable(uti2-color);
+      background: functions.css-variable(uti2-bgcolor);
+    }
+  }
+}

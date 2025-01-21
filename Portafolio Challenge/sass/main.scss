@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+// @use 'abstracts/variables';
+@use 'abstracts/functions';
+@use 'abstracts/mixins';
+
+// 2. Vendors
+// @use 'vendors/normalize';
+@use 'vendors/reset';
+
+// 3. Base stuff
+@use 'base/base';
+@use 'base/fonts';
+@use 'base/helpers';
+
+// 4. Layout-related sections
+@use 'layout/main-header';
+@use 'layout/main-nav';
+@use 'layout/main';
+@use 'layout/hamburger-button';
+@use 'layout/about';
+@use 'layout/academic';
+@use 'layout/experience';
+@use 'layout/form-contact';
+@use 'layout/title';
+@use 'layout/main-footer';
+
+
+// 5. Components
+@use 'components/btn';
+@use 'components/main-nav-toggle';
+@use 'components/form';
+@use 'components/section-card';
+@use 'components/card';
+@use 'components/github-link';
+@use 'components/linkedin-link';
+
+@use 'components/error-popup';  // Must be last
+
+
+// 6. Page-specific styles
+@use 'pages/home';
+
+// 7. Themes
+@use 'themes/default';
+@use 'themes/dark-mode';

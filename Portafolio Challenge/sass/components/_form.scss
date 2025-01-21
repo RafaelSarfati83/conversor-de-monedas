@@ -1,0 +1,89 @@
+@use '../abstracts/mixins';
+@use '../abstracts/functions';
+
+
+.form {
+  @include mixins.display-flex(column, stretch, stretch);
+  gap: 2rem;
+  &__input {
+    padding: 1.5rem 0.75rem 0.25rem;
+    border-radius: 0.25rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid functions.css-variable(muted-input1);
+    min-width: 0;
+    line-height: 1.25rem;
+    width: 100%;
+    background-color: functions.css-variable(bg-input1);
+    @media (min-width: 768px) {
+      border-width: 2px;
+    }
+    &::placeholder {
+      color: transparent;
+    }
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .form__label {
+        top: 0.5rem;
+        font-size: 0.75rem;
+      }
+    }
+    &:focus {
+      border-color: functions.css-variable(uti2-color);
+    }
+    &-group {
+      // @include mixins.display-flex;
+      position: relative;
+      &:focus-within {
+        .form__label {
+          color: functions.css-variable(uti2-color);
+        }
+      }
+      &--textarea {
+        
+      }
+    }
+  }
+  &__label {
+    position: absolute;
+    top: 1rem;
+    left: 0.75rem;
+    background-color: functions.css-variable(bg-input1);
+    color: functions.css-variable(muted-input1);
+    transition: all 0.2s, 0.5s border, 0.5s background, 0.5s color;
+    // transition: all 0.2s;
+  }
+  &__submit {
+    align-self: flex-start;
+  }
+  &__textarea {
+    line-height: 1.25rem;
+    border: none;
+    transition: 0.5s border, 0.5s background, 0.5s color;
+    border-bottom: 2px solid functions.css-variable(muted-input1);
+    border-radius: 0.25rem;
+    background-color: functions.css-variable(bg-input1);
+    min-width: 0;
+    outline: none;
+    padding: 1.5rem 0.75rem 0.25rem;
+    width: 100%;
+    resize: none;
+    @media (min-width: 768px) {
+      border-width: 2px;
+    }
+    &::placeholder {
+      color: transparent;
+    }
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .form__label {
+        top: 0.5rem;
+        font-size: 0.75rem;
+      }
+    }
+    &:focus {
+      border-color: functions.css-variable(uti2-color);
+    }
+  }
+
+}

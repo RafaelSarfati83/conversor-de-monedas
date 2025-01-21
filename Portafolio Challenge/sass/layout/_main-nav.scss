@@ -1,0 +1,40 @@
+@use '../abstracts/mixins';
+
+.main-nav {
+  // height: 100%;
+  // box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+  padding: 0 2em;
+  @media (min-width: 992px) {
+    height: 100%;
+  }
+  &__list {
+    @include mixins.display-flex(column);
+    gap: 2em;
+    @media (min-width:992px) {
+      height: 100%;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 2em;
+    }
+  }
+  &__item {
+
+  }
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.15s;
+    font-size: 1.2rem;
+    text-transform: lowercase;
+    display: inline-block;
+
+    &:hover,
+    &:active {
+      transform: scale(1.1);
+    }
+    @media (min-width: 992px) {
+      font-size: 1rem;
+      text-transform: none;
+    }
+  }
+}

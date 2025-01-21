@@ -1,0 +1,43 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.form-contact {
+  padding: 1rem 2rem 2rem;
+  margin: auto;
+  max-width: variables.$max-width;
+  @media (min-width: 1440px) {
+    padding: variables.$max-padding;
+    @include mixins.display-flex(row, center, stretch);
+    gap: 1rem;
+  }
+
+  &__img {
+    height: 100%;
+    &-container {
+      display: none;
+      @media (min-width: 1440px) {
+        display: block;
+      }
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    @media (min-width: 1440px) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+  &__subtext {
+  }
+  &__form-container {
+    padding: 2rem 0 0;
+  }
+}

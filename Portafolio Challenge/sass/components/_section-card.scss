@@ -1,0 +1,41 @@
+@use "../abstracts/variables";
+
+.section-card {
+  padding: 0rem 1rem;
+  max-width: variables.$max-width;
+  margin: auto;
+  @media (min-width:768px) {
+    padding: 1rem 2rem;
+  }
+  @media (min-width: 1440px) {
+    padding: 2rem;
+  }
+  &__header {
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    padding: 1rem 0 1rem;
+    @media(min-width: 1440px) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+  &__content {
+    padding: 0.5rem 0;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+  }
+  &__card-container {
+    padding: 0.5rem 0;
+    height: 120px;
+    flex: 1 0 40%;
+    @media (min-width: 768px) {
+      flex: 1 0 30%;
+    }
+    @media (min-width: 1440px) {
+      flex: 1 0 15%;
+    }
+  }
+}

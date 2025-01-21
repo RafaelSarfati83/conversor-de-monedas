@@ -1,0 +1,32 @@
+@use '../abstracts/functions';
+
+.main {
+  // padding: 74px 0 0;
+  &__title-container {
+
+  }
+  &__about-container {
+    transition: background 0.5s;
+    background-color: functions.css-variable(sec-bgcolor);
+  }
+  &__section-card-container {
+    &--skills {
+
+    }
+    &--hobbies {
+      
+    }
+  }
+  &__academic-container {
+    transition: background 0.5s;
+    background-color: functions.css-variable(sec-bgcolor);
+
+  }
+  &__experience-container {
+  }
+  &__form-contact-container {
+    transition: background 0.5s;
+    background-color: functions.css-variable(sec-bgcolor);
+    padding: 4rem 0 2rem;
+  }
+}
